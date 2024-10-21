@@ -1,18 +1,44 @@
 import './App.css';
+// Creating and nesting components
+// function MyButton() {
+//   return (
+//     <button>
+//       I'm a button
+//     </button>
+//   );
+// }
 
-function MyButton() {
+// export default function MyApp() {
+//   return (
+//     <div>
+//       <h1>Welcome to my app</h1>
+//       <MyButton />
+//     </div>
+//   );
+// }
+// ------------------------------------------
+
+//Writing markup with JSX, Adding Styles and Displaying Data
+const user = {
+  name: 'Hedy Lamarr',
+  imageUrl: 'https://i.imgur.com/yXOvdOSs.jpg',
+  imageSize: 90,
+};
+
+export default function Profile() {
   return (
-    <button>
-      I'm a button
-    </button>
+    <>
+      <h1>{user.name}</h1>
+      <img
+        className="avatar"
+        src={user.imageUrl}
+        alt={'Photo of ' + user.name}
+        style={{
+          width: user.imageSize,
+          height: user.imageSize
+        }}
+      />
+    </>
   );
 }
-
-export default function MyApp() {
-  return (
-    <div>
-      <h1>Welcome to my app</h1>
-      <MyButton />
-    </div>
-  );
-}
+// ------------------------------------------
